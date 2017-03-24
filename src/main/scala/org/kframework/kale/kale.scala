@@ -18,7 +18,10 @@ trait Label extends MemoizedHashCode with pattern.Symbol {
 
   override def computeHashCode = name.hashCode
 
-  override def toString = name
+//  override def toString = name
+  override def toString: String = {
+    name.substring(0, name.indexOf(':'))
+  }
 
   // FOR KORE
   def str: String = name
